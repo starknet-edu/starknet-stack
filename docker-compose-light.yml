@@ -1,0 +1,23 @@
+version: "3.0"
+services:
+  geth:
+    image: ethereum/client-go
+    container_name: geth
+    user: "${UID}:${GID}"
+    volumes:
+      - ./l1_execution:/root/.ethereum
+    ports:
+      - 30303:30303
+      - 8545:8545
+      - 8546:8546
+      - 8551:8551
+    command:
+      - --syncmode=light
+      - --cache=8192
+      - --http
+      - --http.addr=0.0.0.0
+      - --ws
+      - --ws.addr=0.0.0.0
+      - --http.vhosts=*
+      - --authrpc.jwtsecret=/root/jwt.hex
+      - --goerli
