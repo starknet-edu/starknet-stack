@@ -1,0 +1,1 @@
+# Lighthouse Data Dir

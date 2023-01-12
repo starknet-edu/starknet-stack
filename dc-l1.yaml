@@ -1,0 +1,33 @@
+version: "3.0"
+services:
+  lighthouse:
+      image: sigp/lighthouse:latest
+      volumes:
+        - ./l1_consensus/data:/root/.lighthouse
+        - ./secret:/root/secret
+      network_mode: "host"
+      command:
+        - lighthouse
+        - beacon
+        - --network=goerli
+        - --metrics
+        - --checkpoint-sync-url=https://goerli.beaconstate.info
+        - --execution-endpoint=http://127.0.0.1:8551
+        - --execution-jwt=/root/secret/jwt.hex
+
+  besu:
+    image: hyperledger/besu:latest
+    container_name: besu
+    volumes:
+      - ./l1_execution/data:/var/lib/besu
+      - ./secret:/var/lib/besu/secret
+    network_mode: "host"
+    command:
+      - --network=goerli
+      - --rpc-http-enabled=true
+      - --data-path=/var/lib/besu
+      - --data-storage-format=BONSAI
+      - --sync-mode=X_SNAP
+      - --engine-rpc-enabled=true
+      - --engine-jwt-enabled=true
+      - --engine-jwt-secret=/var/lib/besu/secret/jwt.hex
