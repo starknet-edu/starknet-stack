@@ -1,3 +1,4 @@
 indexer/index.db
 l1_consensus/data
 l1_execution/data
+l2_execution/data

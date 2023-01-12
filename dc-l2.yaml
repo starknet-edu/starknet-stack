@@ -3,24 +3,11 @@ services:
   pathfinder:
     image: eqlabs/pathfinder:latest
     container_name: pathfinder
+    volumes:
+      - ./l2_execution/data:/usr/share/pathfinder/data
     network_mode: "host"
     environment:
       - RUST_LOG=info
-      - PATHFINDER_ETHEREUM_API_URL=https://goerli.infura.io/v3/fdf03a10160946b4a0e2b56dbe503d16
+      - PATHFINDER_ETHEREUM_API_URL=http://127.0.0.1:8545
     ports:
       - 9545:9545
-    volumes:
-      - ./pathfinder:/usr/share/pathfinder/data
-
-  validator_client:
-      image: sigp/lighthouse:latest
-      volumes:
-          - ./lighthouse-data:/root/.lighthouse
-          - ./scripts:/root/scripts:ro
-          - ./validator_keys:/root/validator_keys:ro
-      depends_on:
-          - beacon_node
-      ports:
-          - 5064:5064/tcp     # metrics endpoint
-      env_file: .env
-      command: sh /root/scripts/start-validator-client.sh

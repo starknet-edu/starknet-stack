@@ -2,6 +2,7 @@ version: "3.0"
 services:
   lighthouse:
       image: sigp/lighthouse:latest
+      container_name: lighthouse
       volumes:
         - ./l1_consensus/data:/root/.lighthouse
         - ./secret:/root/secret
