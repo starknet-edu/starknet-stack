@@ -6,7 +6,7 @@
 
 <https://docs.docker.com/engine/install/ubuntu>
 
-###  Install Docker Compose
+### Install Docker Compose
 
 <https://docs.docker.com/compose/install/linux>
 
@@ -33,4 +33,10 @@ docker compose rm
 docker container logs -f $(docker ps | grep besu | awk '{print $1}')
 docker container logs -f $(docker ps | grep lighthouse | awk '{print $1}')
 docker container logs -f $(docker ps | grep pathfinder | awk '{print $1}')
+```
+
+## Start Indexer
+
+```bash
+./indexer/indexer.sh
 ```

@@ -9,5 +9,3 @@ services:
     environment:
       - RUST_LOG=info
       - PATHFINDER_ETHEREUM_API_URL=http://127.0.0.1:8545
-    ports:
-      - 9545:9545
