@@ -18,7 +18,7 @@ do
     else
         echo "found transaction: $TX_HASH"
 
-        echo "EVENT to Index:"
+        echo "Eevents to Index:"
 
         curl --location --request POST 'http://localhost:9545' \
             --header 'Content-Type: application/json' \
