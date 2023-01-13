@@ -2,6 +2,10 @@
 
 ## Setup
 
+```bash
+sudo apt install -y jq curl net-tools
+```
+
 ### Install Docker
 
 <https://docs.docker.com/engine/install/ubuntu>
