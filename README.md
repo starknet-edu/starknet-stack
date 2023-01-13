@@ -2,9 +2,11 @@
 
 ## Setup
 
-### Install Docker && Docker Compose
+### Install Docker
 
 <https://docs.docker.com/engine/install/ubuntu>
+
+###  Install Docker Compose
 
 <https://docs.docker.com/compose/install/linux>
 
