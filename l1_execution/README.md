@@ -1,1 +1,0 @@
-# Besu Data Dir
