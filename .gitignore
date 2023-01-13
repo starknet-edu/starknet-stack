@@ -1,5 +1,14 @@
 indexer/index.db
 indexer/l3.json
-l1_consensus/data
-l1_execution/data
-l2_execution/data
+
+l1_consensus/data/goerli
+
+l1_execution/data/caches
+l1_execution/data/database
+l1_execution/data/secret
+l1_execution/data/besu.networks
+l1_execution/data/besu.ports
+l1_execution/data/DATABASE_METADATA.json
+l1_execution/data/key
+
+l2_execution/data/goerli*
