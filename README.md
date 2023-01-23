@@ -1,5 +1,7 @@
 # StarkNet Stack
 
+Docker configurations are meant for teaching purposes, use in production at your own risk.
+
 ## Setup
 
 ```bash
